@@ -19,7 +19,7 @@ $google_map_params['address5'] = get_post_meta(get_the_ID(), 'tour_location_addr
 <div class="qodef-location-part">
 
     <h3 class="qodef-tour-location">
-        <?php esc_html_e('Tour Location', 'setsail-tours'); ?>
+        <?php esc_html_e('Destino', 'setsail-tours'); ?>
     </h3>
 
     <p class="qodef-location-excerpt">

@@ -7,7 +7,7 @@ if($image_gallery_val !== '') : ?>
     <div class="qodef-tour-gallery-item-holder">
 
         <h4 class="qodef-gallery-title">
-            <?php esc_html_e('From our gallery', 'setsail-tours'); ?>
+            <?php esc_html_e('De nuestra galería', 'setsail-tours'); ?>
         </h4>
 
         <p class="qodef-tour-gallery-item-excerpt">

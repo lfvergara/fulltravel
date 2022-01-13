@@ -1,7 +1,7 @@
 <div class="qodef-tours-search-main-filters-holder qodef-boxed-widget">
 	<form action="<?php echo esc_url(setsail_tours_get_search_page_url()); ?>" method="GET">
 		<div class="qodef-tours-search-main-filters-title">
-			<h4><?php esc_html_e('Plan Your Trip', 'setsail-tours'); ?></h4>
+			<h4><?php esc_html_e('Prepara tu viaje', 'setsail-tours'); ?></h4>
 		</div>
 		<div class="qodef-tours-search-main-filters-text">
 			<p><?php esc_html_e('It’s time to plan just the perfect vacation!', 'setsail-tours'); ?></p>
@@ -17,13 +17,13 @@
 				<span class="qodef-tours-input-icon">
 					<span class="icon_search"></span>
 				</span>
-				<input class="qodef-tours-keyword-search" value="<?php echo esc_attr($keyword); ?>" type="text" name="keyword" placeholder="<?php esc_attr_e('Search Tour', 'setsail-tours'); ?>">
+				<input class="qodef-tours-keyword-search" value="<?php echo esc_attr($keyword); ?>" type="text" name="keyword" placeholder="<?php esc_attr_e('Buscar destino', 'setsail-tours'); ?>">
 			</div>
 			<div class="qodef-tours-input-with-icon">
 				<span class="qodef-tours-input-icon">
 					<span class="icon_compass"></span>
 				</span>
-				<input type="text" value="<?php echo esc_attr($destination); ?>" class="qodef-tours-destination-search" name="destination" placeholder="<?php esc_attr_e('Where To?', 'setsail-tours'); ?>">
+				<input type="text" value="<?php echo esc_attr($destination); ?>" class="qodef-tours-destination-search" name="destination" placeholder="<?php esc_attr_e('A dónde?', 'setsail-tours'); ?>">
 			</div>
 			<div class="qodef-tours-input-with-icon">
 				<span class="qodef-tours-input-icon">
@@ -39,11 +39,11 @@
 			</div>
 
 			<?php if ( $min_price !== $max_price ) { ?>
-				<h5 class="qodef-tours-filter-label"><?php echo esc_html__('Filter by price', 'setsail-tours');?></h5>
+				<h5 class="qodef-tours-filter-label"><?php echo esc_html__('Filtrar por precio', 'setsail-tours');?></h5>
 				<div class="qodef-tours-range-input"></div>
 
 				<div class="qodef-tours-input-with-icon qodef-tpl-holder">
-					<span class="qodef-tours-price-label"><?php echo esc_html__('Price: ', 'setsail-tours');?></span>
+					<span class="qodef-tours-price-label"><?php echo esc_html__('Precio: ', 'setsail-tours');?></span>
 					<input type="text" class="qodef-tours-price-range-field"
 						data-currency-symbol-position="<?php echo esc_attr($currency_position); ?>"
 						data-currency-symbol="<?php echo esc_attr($currency_symbol); ?>"
@@ -51,7 +51,7 @@
 						data-max-price="<?php echo esc_attr($max_price); ?>"
 						data-chosen-min-price="<?php echo esc_attr($chosen_min_price); ?>"
 						data-chosen-max-price="<?php echo esc_attr($chosen_max_price); ?>"
-						placeholder="<?php esc_attr_e('Price Range', 'setsail-tours'); ?>">
+						placeholder="<?php esc_attr_e('Rango de Precio', 'setsail-tours'); ?>">
 					<input type="hidden" name="min_price">
 					<input type="hidden" name="max_price">
 				</div>
@@ -80,13 +80,13 @@
 					'html_type'    => 'input',
 					'input_name'   => 'setsail_tours_search_submit',
 					'size'		   => 'medium',
-					'text'         => esc_attr__('Search', 'setsail-tours'),
+					'text'         => esc_attr__('Buscar', 'setsail-tours'),
 					'custom_attrs' => array(
-						'data-searching-label' => esc_attr__('Searching...', 'setsail-tours')
+						'data-searching-label' => esc_attr__('Buscando...', 'setsail-tours')
 					)
 				)); ?>
 			<?php else: ?>
-				<input type="submit" name="setsail_tours_search_submit" value="<?php esc_attr_e('Search', 'setsail-tours') ?>" class="qodef-btn qodef-btn-medium qodef-btn-solid" data-searching-label="<?php esc_attr_e('Searching...', 'setsail-tours'); ?>">
+				<input type="submit" name="setsail_tours_search_submit" value="<?php esc_attr_e('Buscar', 'setsail-tours') ?>" class="qodef-btn qodef-btn-medium qodef-btn-solid" data-searching-label="<?php esc_attr_e('Buscando...', 'setsail-tours'); ?>">
 			<?php endif; ?>
 			
 			<?php if(setsail_tours_is_wpml_installed()) { ?>

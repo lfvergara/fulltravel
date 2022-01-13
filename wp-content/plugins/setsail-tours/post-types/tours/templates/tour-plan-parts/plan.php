@@ -5,7 +5,7 @@ $tour_plan = get_post_meta(get_the_ID(), 'tour_plan_repeater', true);
 if(is_array($tour_plan) && count($tour_plan)) { ?>
 	
 	<h3 class="qodef-tour-plan-title">
-		<?php esc_html_e( 'Tour Plan', 'setsail-tours' ); ?>
+		<?php esc_html_e( 'Itinerario', 'setsail-tours' ); ?>
 	</h3>
 	
     <?php foreach ($tour_plan as $i => $tour_plan_item) { ?>

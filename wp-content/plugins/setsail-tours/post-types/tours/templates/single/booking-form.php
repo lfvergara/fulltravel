@@ -7,7 +7,7 @@
 		<?php wp_nonce_field('setsail_tours_booking_form', 'setsail_tours_booking_form'); ?>
 
 		<div class="qodef-tour-booking-field-holder qodef-tours-input-with-icon">
-			<input type="text" placeholder="<?php esc_attr_e('Name *', 'setsail-tours'); ?>" value="<?php echo esc_attr(setsail_tours_get_current_user_name()); ?>" name="user_name">
+			<input type="text" placeholder="<?php esc_attr_e('Nombre *', 'setsail-tours'); ?>" value="<?php echo esc_attr(setsail_tours_get_current_user_name()); ?>" name="user_name">
 
 			<span class="qodef-tours-input-icon">
 				<i class="icon_profile"></i>
@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="qodef-tour-booking-field-holder qodef-tours-input-with-icon">
-			<input type="text" autocomplete="off"  value="" placeholder="<?php esc_attr_e('Confirm Email *', 'setsail-tours'); ?>" name="user_confirm_email">
+			<input type="text" autocomplete="off"  value="" placeholder="<?php esc_attr_e('Confirmar Email *', 'setsail-tours'); ?>" name="user_confirm_email">
 
 			<span class="qodef-tours-input-icon">
 				<i class="icon_mail_alt"></i>
@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="qodef-tour-booking-field-holder qodef-tours-input-with-icon">
-			<input type="text" placeholder="<?php esc_attr_e('Phone', 'setsail-tours'); ?>" name="user_phone">
+			<input type="text" placeholder="<?php esc_attr_e('Teléfono', 'setsail-tours'); ?>" name="user_phone">
 
 			<span class="qodef-tours-input-icon">
 				<i class="icon_phone"></i>
@@ -49,7 +49,7 @@
 		<div id="qodef-tour-booking-time-picker"></div>
 
 		<div class="qodef-tour-booking-field-holder qodef-tours-input-with-icon">
-			<input type="number" name="number_of_tickets" min="1" placeholder="<?php esc_attr_e('Number of tickets *', 'setsail-tours'); ?>">
+			<input type="number" name="number_of_tickets" min="1" placeholder="<?php esc_attr_e('Cantidad de Viajeros *', 'setsail-tours'); ?>">
 
 			<span class="qodef-tours-input-icon">
 				<i class="icon_tags_alt"></i>
@@ -57,7 +57,7 @@
 		</div>
 
 		<div class="qodef-tour-booking-field-holder qodef-tours-input-with-icon">
-			<textarea name="message" placeholder="<?php esc_attr_e('Message', 'setsail-tours'); ?>"></textarea>
+			<textarea name="message" placeholder="<?php esc_attr_e('Mensaje', 'setsail-tours'); ?>"></textarea>
 			<span class="qodef-tours-input-icon message-icon">
 				<i class="icon_chat"></i>
 			</span>
@@ -95,15 +95,15 @@
 
 		<?php if(setsail_tours_theme_installed()) : ?>
 			<?php echo setsail_select_execute_shortcode('qodef_button', array(
-				'text' => esc_html__('Check Availability', 'setsail-tours'),
+				'text' => esc_html__('Verificar disponibilidad', 'setsail-tours'),
 				'type' => 'grey',
 				'custom_attrs' => array(
-					'data-loading-label' => esc_attr__('Checking...', 'setsail-tours')
+					'data-loading-label' => esc_attr__('Verificando...', 'setsail-tours')
 				),
 				'custom_class' => 'qodef-tours-check-availability'
 			)); ?>
 		<?php else: ?>
-			<a href="#" class="qodef-tours-check-availability"><?php esc_html_e('Check Availability', 'setsail-tours'); ?></a>
+			<a href="#" class="qodef-tours-check-availability"><?php esc_html_e('Verificar disponibilidad', 'setsail-tours'); ?></a>
 		<?php endif; ?>
 
 		<?php if(setsail_tours_theme_installed()) : ?>

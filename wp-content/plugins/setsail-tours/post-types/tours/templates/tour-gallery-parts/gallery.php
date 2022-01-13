@@ -3,7 +3,7 @@ $image_gallery_val = get_post_meta(get_the_ID(), 'tour_gallery_images', true);
 $gallery_excerpt   = get_post_meta(get_the_ID(), 'tour_gallery_excerpt', true);
 ?>
 	
-	<h3 class="qodef-tour-gallery-title"> <?php esc_html_e( 'Gallery', 'setsail-tours' ); ?> </h3>
+	<h3 class="qodef-tour-gallery-title"> <?php esc_html_e( 'Galería', 'setsail-tours' ); ?> </h3>
 	<p class="qodef-tour-gallery-item-excerpt"> <?php echo wp_kses_post( $gallery_excerpt ); ?> </p>
 
 <?php if($image_gallery_val !== "") { ?>

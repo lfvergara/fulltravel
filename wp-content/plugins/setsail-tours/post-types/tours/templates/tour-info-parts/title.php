@@ -9,10 +9,10 @@ $title = get_the_title();
 		<?php } ?>
 		<div class="qodef-tour-item-price-holder">
 			<span class="qodef-tour-item-price">
-				<?php echo setsail_tours_get_tour_price_html(get_the_ID()); ?>
+				<?php esc_html_e('Desde', 'setsail-tours'); ?> <?php echo setsail_tours_get_tour_price_html(get_the_ID()); ?>
 			</span>
 			<span class="qodef-tour-item-price-text">
-				<?php esc_html_e('/ per person', 'setsail-tours'); ?>
+				<?php esc_html_e('/ por persona', 'setsail-tours'); ?>
 			</span>
 		</div>
 	</div>

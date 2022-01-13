@@ -199,27 +199,27 @@ if ( ! function_exists( 'setsail_tours_check_tour_sections' ) ) {
 			switch ( $section_key ) {
 				case 'show_info_section' :
 					$return_array[ $section_key ]['icon']  = 'icon_documents_alt';
-					$return_array[ $section_key ]['title'] = esc_html__( 'INFORMATION', 'setsail-tours' );
+					$return_array[ $section_key ]['title'] = esc_html__( 'INFORMACIÓN', 'setsail-tours' );
 					$return_array[ $section_key ]['id']    = 'tour-item-info-id';
 					break;
 				case 'show_plan_section' :
 					$return_array[ $section_key ]['icon']  = 'icon_calendar';
-					$return_array[ $section_key ]['title'] = esc_html__( 'TOUR PLAN', 'setsail-tours' );
+					$return_array[ $section_key ]['title'] = esc_html__( 'ITINERARIO', 'setsail-tours' );
 					$return_array[ $section_key ]['id']    = 'tour-item-plan-id';
 					break;
 				case 'show_location_section' :
 					$return_array[ $section_key ]['icon']  = 'icon_pin_alt';
-					$return_array[ $section_key ]['title'] = esc_html__( 'LOCATION', 'setsail-tours' );
+					$return_array[ $section_key ]['title'] = esc_html__( 'DESTINO', 'setsail-tours' );
 					$return_array[ $section_key ]['id']    = 'tour-item-location-id';
 					break;
 				case 'show_gallery_section' :
 					$return_array[ $section_key ]['icon']  = 'icon_camera_alt';
-					$return_array[ $section_key ]['title'] = esc_html__( 'GALLERY', 'setsail-tours' );
+					$return_array[ $section_key ]['title'] = esc_html__( 'GALERÍA', 'setsail-tours' );
 					$return_array[ $section_key ]['id']    = 'tour-item-gallery-id';
 					break;
 				case 'show_review_section' :
 					$return_array[ $section_key ]['icon']  = 'icon_chat_alt';
-					$return_array[ $section_key ]['title'] = esc_html__( 'REVIEWS', 'setsail-tours' );
+					$return_array[ $section_key ]['title'] = esc_html__( 'REVISIÓN', 'setsail-tours' );
 					$return_array[ $section_key ]['id']    = 'tour-item-review-id';
 					break;
 				case 'show_custom_section_1' :
