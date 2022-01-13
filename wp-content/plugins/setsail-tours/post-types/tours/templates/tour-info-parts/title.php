@@ -9,7 +9,7 @@ $title = get_the_title();
 		<?php } ?>
 		<div class="qodef-tour-item-price-holder">
 			<span class="qodef-tour-item-price">
-				<?php esc_html_e('Desde', 'setsail-tours'); ?> <font style="font-size: 30px;"><?php echo setsail_tours_get_tour_price_html(get_the_ID()); ?></font>
+				<?php esc_html_e('Desde', 'setsail-tours'); ?> <font style="font-size: 30px !important;"><?php echo setsail_tours_get_tour_price_html(get_the_ID()); ?></font>
 			</span>
 			<span class="qodef-tour-item-price-text">
 				<?php esc_html_e('/ por persona', 'setsail-tours'); ?>
