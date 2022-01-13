@@ -227,6 +227,47 @@ if(!function_exists('setsail_tours_get_tour_price_html')) {
 	}
 }
 
+if(!function_exists('dharma_tours_get_tour_price_single_item_html')) {
+	/**
+	 * Generates html part for tour price.
+	 *
+	 * @param int $tour_id
+	 *
+	 * @return string
+	 */
+	function dharma_tours_get_tour_price_single_item_html($tour_id = null) {
+		$tour_id = empty($tour_id) ? get_the_ID() : $tour_id;
+
+		$price          = setsail_tours_get_tour_price($tour_id);
+		$discount_price = setsail_tours_get_tour_discount_price($tour_id);
+
+		$holder_class = array('qodef-tours-price-holder');
+		$price_on_discount_class = ''; 
+
+		if($discount_price) {
+			$holder_class[] = 'qodef-tours-price-with-discount';
+			$price_on_discount_class = 'qodef-tours-price-old';
+		}
+
+		ob_start(); ?>
+
+		<span class="<?php echo esc_attr(implode(' ', $holder_class)); ?>">
+			<?php if($price) : ?>
+				<span class="qodef-tours-item-price <?php echo esc_attr($price_on_discount_class);?>" style="font-size: 30px !important;"><?php echo esc_html($price); ?></span>
+			<?php endif; ?>
+			<?php if($discount_price) : ?>
+				<span class="qodef-tours-item-discount-price qodef-tours-item-price">
+					<?php echo esc_html($discount_price); ?>
+				</span>
+			<?php endif; ?>
+		</span>
+
+		<?php
+
+		return apply_filters('setsail_tours_get_tour_price_html', ob_get_clean(), $price, $discount_price);
+	}
+}
+
 if(!function_exists('setsail_tours_get_tour_min_age_html')) {
 	/**
 	 * @param null $tour_id

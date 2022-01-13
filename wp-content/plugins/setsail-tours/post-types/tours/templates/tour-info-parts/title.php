@@ -8,8 +8,8 @@ $title = get_the_title();
 			<h3 class="qodef-tour-item-title"><?php echo esc_html( $title ) ?></h3>
 		<?php } ?>
 		<div class="qodef-tour-item-price-holder">
-			<span class="qodef-tour-item-price" style="font-size: 30px !important;">
-				<?php esc_html_e('Desde', 'setsail-tours'); ?> <?php echo setsail_tours_get_tour_price_html(get_the_ID()); ?>
+			<span class="qodef-tour-item-price">
+				<?php esc_html_e('Desde', 'setsail-tours'); ?> <?php echo dharma_tours_get_tour_price_single_item_html(get_the_ID()); ?>
 			</span>
 			<span class="qodef-tour-item-price-text">
 				<?php esc_html_e('/ por persona', 'setsail-tours'); ?>
