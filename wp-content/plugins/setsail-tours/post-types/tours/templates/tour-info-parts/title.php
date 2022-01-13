@@ -17,6 +17,6 @@ $title = get_the_title();
 		</div>
 	</div>
 	<?php if ( setsail_select_core_plugin_installed() ) {
-		echo setsail_core_list_review_details( 'average-count' );
+		//echo setsail_core_list_review_details( 'average-count' );
 	} ?>
 </div>
