@@ -33,7 +33,7 @@ extract($tour_sections);
         <div class="qodef-tour-item-section qodef-information-section qodef-tab-container" id="<?php echo esc_attr($show_info_section['id']) ?>">
 	
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
-		        <div class="qodef-grid-col-9">
+		        <div class="qodef-grid-col-12">
 			        <?php setsail_tours_get_tour_info_part('tour-info-parts/title'); ?>
 			        <?php setsail_tours_get_tour_info_part('tour-info-parts/content'); ?>
 			
@@ -55,7 +55,7 @@ extract($tour_sections);
         <div class="qodef-tour-item-section qodef-plan-section qodef-tab-container" id="<?php echo esc_attr($show_plan_section['id']) ?>">
 	        
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
-		        <div class="qodef-grid-col-9">
+		        <div class="qodef-grid-col-12">
 			        
 			        <?php setsail_tours_get_tour_info_part('tour-plan-parts/plan'); ?>
 			        
@@ -69,7 +69,7 @@ extract($tour_sections);
 
         <div class="qodef-tour-item-section qodef-location-section qodef-tab-container" id="<?php echo esc_attr($show_location_section['id']) ?>">
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
-		        <div class="qodef-grid-col-9">
+		        <div class="qodef-grid-col-12">
 			        
 			        <?php setsail_tours_get_tour_info_part('tour-location-parts/location'); ?>
 			        
@@ -83,7 +83,7 @@ extract($tour_sections);
 
         <div class="qodef-tour-item-section qodef-gallery-section qodef-tab-container" id="<?php echo esc_attr($show_gallery_section['id']) ?>">
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
-		        <div class="qodef-grid-col-9">
+		        <div class="qodef-grid-col-12">
 			
 			        <?php setsail_tours_get_tour_info_part('tour-gallery-parts/gallery'); ?>
 		
@@ -97,7 +97,7 @@ extract($tour_sections);
 
         <div class="qodef-tour-item-section qodef-reviews-section qodef-tab-container" id="<?php echo esc_attr($show_review_section['id']) ?>">
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
-		        <div class="qodef-grid-col-9">
+		        <div class="qodef-grid-col-12">
 			        
 			        <?php setsail_tours_get_tour_info_part('tour-review-parts/reviews'); ?>
 		
@@ -111,7 +111,7 @@ extract($tour_sections);
 
         <div class="qodef-tour-item-section qodef-custom-section qodef-tab-container" id="<?php echo esc_attr($show_custom_section_1['id']) ?>">
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
-		        <div class="qodef-grid-col-9">
+		        <div class="qodef-grid-col-12">
 			
 			        <?php setsail_tours_get_tour_info_part('tour-custom1-parts/custom'); ?>
 		
@@ -125,7 +125,7 @@ extract($tour_sections);
 
         <div class="qodef-tour-item-section qodef-custom-2-section qodef-tab-container" id="<?php echo esc_attr($show_custom_section_2['id']) ?>">
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
-		        <div class="qodef-grid-col-9">
+		        <div class="qodef-grid-col-12">
 			
 			        <?php setsail_tours_get_tour_info_part('tour-custom2-parts/custom'); ?>
 		
@@ -135,17 +135,17 @@ extract($tour_sections);
 
     <?php } ?>
 	
-	
+	<!--
 	<div class="qodef-sidebar-holder">
 		<aside class="qodef-sidebar">
 			<div class="widget qodef-tours-booking-form-holder">
-				<?php if(setsail_tours_is_tour_bookable()) : ?>
-					<?php echo setsail_tours_get_tour_module_template_part('single/booking-form', 'tours', 'templates', '', $params); ?>
-				<?php endif; ?>
+				<?php //if(setsail_tours_is_tour_bookable()) : ?>
+					<?php //echo setsail_tours_get_tour_module_template_part('single/booking-form', 'tours', 'templates', '', $params); ?>
+				<?php //endif; ?>
 			</div>
 			
-			<?php dynamic_sidebar('tour-single-sidebar'); ?>
+			<?php //dynamic_sidebar('tour-single-sidebar'); ?>
 		</aside>
 	</div>
-
+	-->
 </article>
