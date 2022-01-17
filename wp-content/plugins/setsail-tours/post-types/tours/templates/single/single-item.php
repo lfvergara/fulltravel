@@ -27,13 +27,14 @@ extract($tour_sections);
         }; ?>
     </ul>
 
-    
+
     <?php if($show_info_section['value'] === 'yes') { ?>
 
         <div class="qodef-tour-item-section qodef-information-section qodef-tab-container" id="<?php echo esc_attr($show_info_section['id']) ?>">
 	
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
 		        <div class="qodef-grid-col-12">
+			        <?php setsail_tours_get_tour_info_part('tour-info-parts/title'); ?>
 			        <?php setsail_tours_get_tour_info_part('tour-info-parts/content'); ?>
 			
 			        <div class="qodef-tour-item-short-info">
@@ -55,7 +56,6 @@ extract($tour_sections);
 	        
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
 		        <div class="qodef-grid-col-12">
-			        <?php setsail_tours_get_tour_info_part('tour-info-parts/title'); ?>
 			        
 			        <?php setsail_tours_get_tour_info_part('tour-plan-parts/plan'); ?>
 			        
