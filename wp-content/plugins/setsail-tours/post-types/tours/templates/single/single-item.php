@@ -3,20 +3,20 @@ extract($tour_sections);
 ?>
 
 <article class="qodef-tour-item-wrapper qodef-tabs qodef-horizontal qodef-tab-text">
-
+	<!--
     <ul class="qodef-tabs-nav clearfix">
-        <?php foreach($tour_sections as $section) {
+        <?php //foreach($tour_sections as $section) {
 
-            if($section['value'] === 'yes') { ?>
+            //if($section['value'] === 'yes') { ?>
 
                 <li class="qodef-tour-nav-item">
 
-                    <a href="<?php echo esc_attr($section['id']) ?>">
+                    <a href="<?php //echo esc_attr($section['id']) ?>">
 
-                        <span class="qodef-tour-nav-section-icon <?php echo esc_attr($section['icon']) ?>"></span>
+                        <span class="qodef-tour-nav-section-icon <?php //echo esc_attr($section['icon']) ?>"></span>
 
 						<span class="qodef-tour-nav-section-title">
-							<?php echo esc_html($section['title']) ?>
+							<?php //echo esc_html($section['title']) ?>
 						</span>
 
                     </a>
@@ -26,7 +26,7 @@ extract($tour_sections);
 
         }; ?>
     </ul>
-
+	-->
 
     <?php if($show_info_section['value'] === 'yes') { ?>
 
