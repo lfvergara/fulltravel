@@ -22,9 +22,9 @@ extract($tour_sections);
                     </a>
                 </li>
 
-            <?php }
+            <?php //}
 
-        }; ?>
+        //}; ?>
     </ul>
 	-->
 
