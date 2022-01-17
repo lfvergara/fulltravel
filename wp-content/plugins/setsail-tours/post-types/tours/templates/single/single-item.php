@@ -30,7 +30,7 @@ extract($tour_sections);
 
     <?php if($show_info_section['value'] === 'yes') { ?>
 
-        <div class="qodef-tour-item-section qodef-information-section qodef-tab-container" id="<?php echo esc_attr($show_info_section['id']) ?>">
+        <div class="qodef-tour-item-section qodef-information-section qodef-tab-container" id="<?php echo esc_attr($show_info_section['id']) ?>" style="padding-top: 0px !important;">
 	
 	        <div class="qodef-grid-row qodef-grid-large-gutter">
 		        <div class="qodef-grid-col-12">
