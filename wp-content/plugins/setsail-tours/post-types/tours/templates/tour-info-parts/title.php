@@ -7,7 +7,7 @@ $title = get_the_title();
 		<?php if ( ! empty( $title ) ) { ?>
 			<h3 class="qodef-tour-item-title" style="font-size: 45px !important;"><?php echo esc_html( $title ) ?></h3>
 		<?php } ?>
-		<div class="qodef-tour-item-price-holder" style="padding-top: 1.5%;">
+		<div class="qodef-tour-item-price-holder" style="padding-top: 1%;">
 			<span class="qodef-tour-item-price">
 				<?php esc_html_e('Desde', 'setsail-tours'); ?> <?php echo dharma_tours_get_tour_price_single_item_html(get_the_ID()); ?>
 			</span>
