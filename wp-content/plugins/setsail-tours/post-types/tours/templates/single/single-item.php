@@ -43,7 +43,7 @@ extract($tour_sections);
 			        </div>
 			
 			        <?php setsail_tours_get_tour_info_part('tour-info-parts/main-info'); ?>
-			        <?php setsail_tours_get_tour_info_part('tour-info-parts/gallery'); ?>
+			        <?php //setsail_tours_get_tour_info_part('tour-info-parts/gallery'); ?>
 		        </div>
 	        </div>
         </div>
