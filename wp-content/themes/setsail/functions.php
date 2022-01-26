@@ -406,7 +406,7 @@ if ( ! function_exists( 'setsail_select_back_to_top_button' ) ) {
 	function setsail_select_back_to_top_button() {
 		if ( setsail_select_options()->getOptionValue( 'show_back_button' ) == 'yes' ) { ?>
 			<a id='qodef-back-to-top' href='#'>
-                <span class="qodef-btt-text"><?php esc_html_e( 'TOP', 'setsail' ); ?></span>
+                <span class="qodef-btt-text"><?php esc_html_e( '<i class="fa fa-arrow-up"></i>', 'setsail' ); ?></span>
 			</a>
 		<?php }
 	}
