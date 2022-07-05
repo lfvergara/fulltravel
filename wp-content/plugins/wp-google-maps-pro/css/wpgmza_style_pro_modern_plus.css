@@ -106,6 +106,7 @@
     right: unset !important;
     top: 0 !important;
     bottom: 0;
+    width: fit-content;
 }
 
 .wpgmza-ol-modern-infowindow-container .wpgmza_modern_infowindow {

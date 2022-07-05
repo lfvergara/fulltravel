@@ -188,6 +188,10 @@ jQuery(function($) {
 			// Store locator distance away
 			// added by Nick 2020-01-12
 			if (this.feature.map.settings.store_locator_show_distance && this.feature.map.storeLocator && (this.feature.map.storeLocator.state == WPGMZA.StoreLocator.STATE_APPLIED)) {
+				if(this.feature.map.settings.show_distance_from_location){
+					// Allow the updateDistanceFromLocation method handle everything
+					return;
+				}
 				var currentLatLng = this.feature.getPosition();
 				var distance = this.workOutDistanceBetweenTwoMarkers(this.feature.map.storeLocator.center, currentLatLng);
 

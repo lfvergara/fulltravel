@@ -245,6 +245,7 @@ function cdp_save_plugin_options($areWePro) {
     $already[$profile]['usmplugin'] = 'false';
     $already[$profile]['yoast'] = 'false';
     $already[$profile]['woo'] = 'false';
+    $already[$profile]['all_metadata'] = 'false';
     if ($areWePro)
         $already[$profile] = cdpp_filter_premium_opts($already, $options, $profile);
 
@@ -433,10 +434,10 @@ function cdp_insert_new_post($areWePro = false) {
             $f = ($meta == '_thumbnail_id' && $settings['f_image']) ? true : false;
             $g = ($meta == '_cdp_origin') ? true : false;
             $h = (mb_substr($meta, 0, 11) == '_elementor_') ? true : false;
-            // $i = (isset($settings['all_metadata']) && $settings['all_metadata'] == 'true') ? true : false;
+            $i = ($areWePro && function_exists('cdpp_check_all_meta')) ? cdpp_check_all_meta($settings, $meta) : false;
 
             // If any of above condition is true pass the meta tag
-            if ($a || $b || $c || $d || $e || $f || $g || $h /*|| $i*/) {
+            if ($a || $b || $c || $d || $e || $f || $g || $h || $i) {
 
                 // Prepare data and insert filtered to results
                 foreach ($vals as $val)

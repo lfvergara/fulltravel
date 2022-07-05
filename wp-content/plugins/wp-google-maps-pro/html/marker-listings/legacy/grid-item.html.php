@@ -23,7 +23,6 @@
 			<p class="wpgmza-content-address-holder-inner wpgmza_marker_title"></p>
 			<img class="wpgmza_marker_icon" src="//maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png"/>
 
-			<!-- NB: Removed paragraph due to non-compliance with standards -->
 			<div class="wpgmza-desc">
 				<p>
 				</p>

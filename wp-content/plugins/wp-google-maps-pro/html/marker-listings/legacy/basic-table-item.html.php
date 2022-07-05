@@ -14,7 +14,6 @@
 			
 			
 			
-			<!-- NB: Removed paragraph due to non-compliance with standards -->
 			<div class="wpgmza-desc">
 				<p>
 				</p>

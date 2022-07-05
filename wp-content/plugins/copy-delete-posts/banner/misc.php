@@ -143,7 +143,9 @@
             wp_enqueue_style('inisev-carousel-style', ($this->url . 'assets/style.min.css'), [], filemtime($this->_root_dir . '/assets/style.min.css'));
 
             // Print the footer
-            add_action('in_admin_footer', [&$this, '_print'], 1);
+            if (!has_action('ins_global_print_carrousel')) {
+              add_action('ins_global_print_carrousel', [&$this, '_print'], 1);
+            }
 
           }
 

@@ -262,7 +262,7 @@ jQuery(function($) {
 		if(this.disableInfoWindow)
 			return false;
 		
-		if(this.map && this.map.userLocationMarker == this)
+		if((this.map && this.map.userLocationMarker == this) || (typeof this.user_location !== 'undefined' && this.user_location))
 			this.infoWindow.setContent(WPGMZA.localized_strings.my_location);
 	}
 	

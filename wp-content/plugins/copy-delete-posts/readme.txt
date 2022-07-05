@@ -2,8 +2,8 @@
 Contributors: CopyDeletePosts, copydelete
 Tags: Duplicate post, Copy posts, Copy pages, Duplicate posts, Duplicate pages, Clone posts, Clone pages, Delete posts, Delete pages, Duplicator, copy post, copy page
 Requires at least: 4.6
-Tested up to: 5.9
-Stable tag: 1.2.6
+Tested up to: 5.9.1
+Stable tag: 1.2.8
 License: GPLv3
 Requires PHP: 5.6
 
@@ -138,6 +138,28 @@ Other duplicate post plugins mostly only allow you to duplicate post to the same
 = Is this plugin GDPR friendly? =
 Copy Delete Posts WordPress plugin doesn’t store any site visitor information so it is completely GDPR friendly.
 
+= Is the plugin also available in my language? =
+So far we have translated the plugin into these languages:
+
+Arabic: [انسخ المنشورات وانسخ الصفحات ونسخ المنشورات المخصصة وحذف التكرارات.](https://ar.wordpress.org/plugins/copy-delete-posts/)
+Chinese (China): [复制帖子、复制页面、复制自定义帖子和删除重复项。](https://cn.wordpress.org/plugins/copy-delete-posts/)
+Croatian: [Kopirajte postove, kopirajte stranice, duplicirajte prilagođene postove i izbrišite duplikate.](https://hr.wordpress.org/plugins/copy-delete-posts/)
+Dutch: [Kopieer berichten, kopieer pagina's, dupliceer aangepaste berichten en verwijder duplicaten.](https://nl.wordpress.org/plugins/copy-delete-posts/)
+English: [Copy pages, copy posts, and delete the duplicate post again in one go](https://wordpress.org/plugins/copy-delete-posts/)
+Finnish: [Kopioi viestejä, kopioi sivuja, monista mukautettuja viestejä ja poista kaksoiskappaleita.](https://fi.wordpress.org/plugins/copy-delete-posts/)
+French (France): [Copiez les publications, copiez les pages, dupliquez les publications personnalisées et supprimez les doublons.](https://fr.wordpress.org/plugins/copy-delete-posts/)
+German: [Kopieren Sie Beiträge, kopieren Sie Seiten, duplizieren Sie benutzerdefinierte Beiträge und löschen Sie Duplikate.](https://de.wordpress.org/plugins/copy-delete-posts/)
+Greek: [Αντιγράψτε αναρτήσεις, αντιγράψτε σελίδες, αντιγράψτε προσαρμοσμένες αναρτήσεις και διαγράψτε διπλότυπα.](https://el.wordpress.org/plugins/copy-delete-posts/)
+Hungarian: [Bejegyzések másolása, oldalak másolása, egyéni bejegyzések másolása és ismétlődések törlése.](https://hu.wordpress.org/plugins/copy-delete-posts/)
+Indonesian: [Salin posting, salin halaman, duplikat posting kustom, dan hapus duplikat.](https://id.wordpress.org/plugins/copy-delete-posts/)
+Italian: [Copia post, copia pagine, duplica post personalizzati ed elimina duplicati.](https://it.wordpress.org/plugins/copy-delete-posts/)
+Persian: [پست ها را کپی کنید، صفحات را کپی کنید، پست های سفارشی را تکرار کنید، و موارد تکراری را حذف کنید.](https://fa.wordpress.org/plugins/copy-delete-posts/)
+Polish: [Kopiuj posty, kopiuj strony, duplikuj posty niestandardowe i usuwaj duplikaty.](https://pl.wordpress.org/plugins/copy-delete-posts/)
+Portuguese (Brazil): [Copie postagens, copie páginas, duplique postagens personalizadas e exclua duplicatas.](https://br.wordpress.org/plugins/copy-delete-posts/)
+Russian: [Копируйте сообщения, копируйте страницы, дублируйте пользовательские сообщения и удаляйте дубликаты.](https://ru.wordpress.org/plugins/copy-delete-posts/)
+Spanish: [Copie publicaciones, copie páginas, duplique publicaciones personalizadas y elimine duplicados.](https://es.wordpress.org/plugins/copy-delete-posts/)
+Turkish: [Gönderi kopyalayın, sayfa kopyalayın, özel tasarlanmış gönderileri çoğaltın, ve kopyaları silin.](https://tr.wordpress.org/plugins/copy-delete-posts/)
+Vietnamese: [Sao chép bài đăng, sao chép trang, sao chép bài đăng tùy chỉnh và xóa bản sao.](https://vi.wordpress.org/plugins/copy-delete-posts/)
 
 == Screenshots ==
 1. Plugin settings page
@@ -150,6 +172,19 @@ Copy Delete Posts WordPress plugin doesn’t store any site visitor information 
 8. Copy from Gutenberg editor
 
 == Changelog ==
+
+= 1.2.8 =
+* Adjusted name of "Hiding Menu" option
+* Tested up to WordPress 5.9.1
+* Adjusted copy tooltip animation, it should appear and disappear quicker
+* Fixed issues with our carrousel display
+
+= 1.2.7 =
+* Changed sensitivity of performance check
+* Added new feature for copying different kinds of posts
+* Updated logic of mirroring metadata posts
+* Retested plugin with latest Gutenberg version
+* Fully tested with WordPress 5.9
 
 = 1.2.6 =
 * Tested with WordPress 5.9-RC1
@@ -279,6 +314,8 @@ Copy Delete Posts WordPress plugin doesn’t store any site visitor information 
 * Initial release
 
 == Upgrade Notice ==
-= 1.2.6 =
-* Tested with WordPress 5.9-RC1
-* Updated tooltips
+= 1.2.8 =
+* Adjusted name of "Hiding Menu" option
+* Tested up to WordPress 5.9.1
+* Adjusted copy tooltip animation, it should appear and disappear quicker
+* Fixed issues with our carrousel display

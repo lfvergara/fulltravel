@@ -515,7 +515,8 @@ jQuery(function($) {
 		var icon = this.settings.upload_default_ul_marker;
 		var options = {
 			id: WPGMZA.guid(),
-			animation: WPGMZA.Marker.ANIMATION_DROP
+			animation: WPGMZA.Marker.ANIMATION_DROP,
+			user_location : true
 		};
 		
 		if(icon && icon.length)
@@ -561,7 +562,7 @@ jQuery(function($) {
 				self.addMarker(marker);
 			
 			if(!self.userLocationMarker)
-			{
+			{	
 				self.userLocationMarker = marker;
 				self.trigger("userlocationmarkerplaced");
 			}

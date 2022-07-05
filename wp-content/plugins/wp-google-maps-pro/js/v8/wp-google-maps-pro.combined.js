@@ -4176,6 +4176,13 @@ jQuery(function($) {
 		this.polylines = [];
 		this.circles = [];
 		this.rectangles = [];
+
+		// GDPR
+		if(WPGMZA.googleAPIStatus && WPGMZA.googleAPIStatus.code == "USER_CONSENT_NOT_GIVEN") {
+			$(element).append($(WPGMZA.api_consent_html));
+			$(element).css({height: "auto"});
+			return;
+		}
 		
 		this.loadSettings(options);
 		
@@ -4198,13 +4205,6 @@ jQuery(function($) {
 		
 		// Init marker filter
 		this.markerFilter = WPGMZA.MarkerFilter.createInstance(this);
-		
-		// GDPR
-		
-		if(WPGMZA.googleAPIStatus && WPGMZA.googleAPIStatus.code == "USER_CONSENT_NOT_GIVEN") {
-			$(element).append($(WPGMZA.api_consent_html));
-			$(element).css({height: "auto"});
-		}
 		
 		// Initialisation
 		this.on("init", function(event) {
@@ -4519,7 +4519,7 @@ jQuery(function($) {
 				filter.offset = offset;
 				filter.limit = limit;
 				
-				data = this.getRESTParameters({
+				data = self.getRESTParameters({
 					filter: JSON.stringify(filter)
 				});
 				
@@ -11527,11 +11527,29 @@ jQuery(function($) {
 						if(ajaxRequest !== false){
 			                ajaxRequest.abort();
 			            }
+
+			            var domain = window.location.hostname;
+			            if(domain === 'localhost'){
+			            	try{
+			            		var paths = window.location.pathname.match(/\/(.*?)\//);
+			            		if(paths && paths.length >= 2 && paths[1]){
+			            			var path = paths[1];
+			            			domain += "-" + path
+			            		}
+			            	} catch (ex){
+			            		/* Leave it alone */
+			            	}
+			            }
+
 			            var wpgmza_api_url = '';
 			            if (!wpgmza_apikey) {
-			            	wpgmza_api_url = "https://wpgmaps.us-3.evennode.com/api/v1/autocomplete?s="+currentSearch+"&d="+window.location.hostname+"&hash="+WPGMZA_localized_data.siteHash
+			            	wpgmza_api_url = "https://wpgmaps.us-3.evennode.com/api/v1/autocomplete?s="+currentSearch+"&d="+domain+"&hash="+WPGMZA_localized_data.siteHash
 			            } else {
-			            	wpgmza_api_url = "https://wpgmaps.us-3.evennode.com/api/v1/autocomplete?s="+currentSearch+"&d="+window.location.hostname+"&hash="+WPGMZA_localized_data.siteHash+"&k="+wpgmza_apikey
+			            	wpgmza_api_url = "https://wpgmaps.us-3.evennode.com/api/v1/autocomplete?s="+currentSearch+"&d="+domain+"&hash="+WPGMZA_localized_data.siteHash+"&k="+wpgmza_apikey
+			            }
+
+			            if(WPGMZA && WPGMZA.settings && WPGMZA.settings.engine){
+			            	wpgmza_api_url += "&engine=" + WPGMZA.settings.engine;
 			            }
 
 			            // set a timer of how fast the person types in seconds to only continue with this if it runs out
@@ -15195,7 +15213,7 @@ jQuery(function($) {
 
 		// added by Nick 04 Jan 2020 - Modern Infowindow Plus directions buttons causes JS error
 		if (!component[0].wpgmzaMarkerListing && !component[0].wpgmzaInfoWindow && !component[0].wpgmzaMap) {
-			component = $(event.currentTarget).closest("[data-map-id]");
+			component = $(event.currentTarget).closest(".wpgmza_map[data-map-id]");
 		}
 
 		if(!component.length) {
@@ -15221,7 +15239,6 @@ jQuery(function($) {
 				// added by Nick 04 Jan 2020 - Modern Infowindow Plus directions buttons causes JS error
 				map = element.wpgmzaMap;
 				marker = map.getMarkerByID($(event.currentTarget).closest("[data-marker-id]").attr("data-marker-id"));
-
 			}
 		}
 		
@@ -17250,6 +17267,10 @@ jQuery(function($) {
 			// Store locator distance away
 			// added by Nick 2020-01-12
 			if (this.feature.map.settings.store_locator_show_distance && this.feature.map.storeLocator && (this.feature.map.storeLocator.state == WPGMZA.StoreLocator.STATE_APPLIED)) {
+				if(this.feature.map.settings.show_distance_from_location){
+					// Allow the updateDistanceFromLocation method handle everything
+					return;
+				}
 				var currentLatLng = this.feature.getPosition();
 				var distance = this.workOutDistanceBetweenTwoMarkers(this.feature.map.storeLocator.center, currentLatLng);
 
@@ -18946,7 +18967,8 @@ jQuery(function($) {
 		var icon = this.settings.upload_default_ul_marker;
 		var options = {
 			id: WPGMZA.guid(),
-			animation: WPGMZA.Marker.ANIMATION_DROP
+			animation: WPGMZA.Marker.ANIMATION_DROP,
+			user_location : true
 		};
 		
 		if(icon && icon.length)
@@ -18992,7 +19014,7 @@ jQuery(function($) {
 				self.addMarker(marker);
 			
 			if(!self.userLocationMarker)
-			{
+			{	
 				self.userLocationMarker = marker;
 				self.trigger("userlocationmarkerplaced");
 			}
@@ -20961,7 +20983,7 @@ jQuery(function($) {
 		if(this.disableInfoWindow)
 			return false;
 		
-		if(this.map && this.map.userLocationMarker == this)
+		if((this.map && this.map.userLocationMarker == this) || (typeof this.user_location !== 'undefined' && this.user_location))
 			this.infoWindow.setContent(WPGMZA.localized_strings.my_location);
 	}
 	
@@ -26507,6 +26529,15 @@ jQuery(function($) {
 	WPGMZA.OLProInfoWindow = function(feature)
 	{
 		WPGMZA.OLInfoWindow.call(this, feature);
+
+		var self = this;
+		$(this.element).on('click', function(event){
+			if(self.feature.map.settings.close_infowindow_on_map_click){
+				event.stopPropagation();
+				event.stopImmediatePropagation();
+				return;
+			}
+		});
 	}
 	
 	WPGMZA.OLProInfoWindow.prototype = Object.create(WPGMZA.OLInfoWindow.prototype);

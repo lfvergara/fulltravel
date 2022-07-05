@@ -1199,7 +1199,13 @@ function wpgmaps_tag_pro( $atts ) {
      		if (isset($atts['disable_vgm_form']) && $atts['disable_vgm_form'] == '1') {
      			/* do nothing */
      		} else {
-            	$ret_msg .= wpgmaps_ugm_user_form($wpgmza_current_map_id, false, false);
+     			/* Thanks to AVdev for the suggestions to add redirect support here */
+     			$redirect_to = false;
+				if (isset($atts['redirect_to'])){
+					$redirect_to = $atts['redirect_to'];
+				}
+				
+				$ret_msg .= wpgmaps_ugm_user_form($wpgmza_current_map_id, $redirect_to, false);
             }
         }
     }

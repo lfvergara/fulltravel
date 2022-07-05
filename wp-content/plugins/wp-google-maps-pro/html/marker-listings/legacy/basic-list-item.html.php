@@ -7,5 +7,4 @@
 		<div class="wpgmza-basic-list-item wpgmza_div_address"></div>
 		<div class="wpgmza-basic-list-item wpgmza-distance-from-location"></div>
 	</div>
-	<!-- No directions or links on basic list at the time of writing -->
 </div>

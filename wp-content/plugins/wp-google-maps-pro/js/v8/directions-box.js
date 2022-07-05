@@ -624,7 +624,7 @@ jQuery(function($) {
 
 		// added by Nick 04 Jan 2020 - Modern Infowindow Plus directions buttons causes JS error
 		if (!component[0].wpgmzaMarkerListing && !component[0].wpgmzaInfoWindow && !component[0].wpgmzaMap) {
-			component = $(event.currentTarget).closest("[data-map-id]");
+			component = $(event.currentTarget).closest(".wpgmza_map[data-map-id]");
 		}
 
 		if(!component.length) {
@@ -650,7 +650,6 @@ jQuery(function($) {
 				// added by Nick 04 Jan 2020 - Modern Infowindow Plus directions buttons causes JS error
 				map = element.wpgmzaMap;
 				marker = map.getMarkerByID($(event.currentTarget).closest("[data-marker-id]").attr("data-marker-id"));
-
 			}
 		}
 		

@@ -101,7 +101,7 @@ function cdp_configuration() {
   <style>
     #wpcontent {padding-left: 2px !important;}
     /* #wpbody {overflow-y: scroll;overflow-x: auto;max-height: calc(100vh - 32px);} */
-    #wpfooter { display: none; padding-bottom: 30vh; }
+    #wpfooter { display: none !important; }
     #wpfooter #footer-left { display: none; }
     #wpfooter #footer-upgrade { display: none; }
   </style>
@@ -325,7 +325,6 @@ function cdp_configuration() {
                       <td><?php _e('…be without private taxonomy.', 'copy-delete-posts'); ?></td>
                   </tr>
 
-                  <?php if (false): ?>
                   <tr>
                     <td class="cdp-tooltip-premium">
                       <label>
@@ -334,7 +333,7 @@ function cdp_configuration() {
                             <input <?php echo (array_key_exists('all_metadata', $defaults) && $defaults['all_metadata']=='true' && $areWePro == true)?'checked ':''; ?>class="cdp-data-set" data-cdp-opt="all_metadata" type="checkbox" />
                           </div>
                           <div class="cdp-left cdp-relative" style="width: calc(100% - 45px)">
-                              <span><?php _e('Other Plugin Settings', 'copy-delete-posts'); ?><span class="cdp-premium-icon cdp-big-icon" style="top: calc(50% + 2px) !important;"></span> </span>
+                              <span><?php _e('All post meta', 'copy-delete-posts'); ?><span class="cdp-premium-icon cdp-big-icon"></span> </span>
                           </div>
                         </div>
                       </label>
@@ -342,7 +341,6 @@ function cdp_configuration() {
                     <td><?php _e('…clone all metadata tags assigned to post/page.', 'copy-delete-posts'); ?></td>
                     <td><?php _e('…copy only required post/page metadata.', 'copy-delete-posts'); ?></td>
                   </tr>
-                  <?php endif; ?>
                   <tr<?php echo (!$isWoo)?' style="display: none;"':'' ?>>
                     <td class="cdp-tooltip-premium">
                       <label>
@@ -595,7 +593,7 @@ function cdp_configuration() {
                 </label>
                 <label for="cdp-o-menu-in-settings">
                   <input <?php echo (isset($gos['cdp-menu-in-settings']) && $gos['cdp-menu-in-settings'] == 'true')?'checked ':''; ?>id="cdp-o-menu-in-settings" type="checkbox" class="cdp-other-inputs" name="cdp-menu-in-settings">
-                  <?php _e('Hide Copy & Delete Posts Menu under <b>Tools</b> dropdown', 'copy-delete-posts'); ?>
+                  <?php _e('Move <b>Copy & Delete Posts</b> <u>menu item</u> under <b>Tools</b> dropdown', 'copy-delete-posts'); ?>
                 </label>
               </div>
               <div class="cdp-center cdp-padding-15-h">
@@ -837,7 +835,7 @@ function cdp_configuration() {
                         <div class="cdp-p-10-h">
                           <div class="cdp-cf cdp-low-margin-bot" style="line-height: 28px;">
                             <div class="cdp-left cdp-blue-circle">1</div>
-                            <div class="cdp-left">&nbsp;<?php _e('Make sure you created a backup with, e.g. with <a href="https://wordpress.org/plugins/wp-clone-by-wp-academy/" target="_blank">this plugin</a>.', 'copy-delete-posts'); ?></div>
+                            <div class="cdp-left">&nbsp;<?php _e('Make sure you created a backup with, e.g. with <a href="https://wordpress.org/plugins/backup-backup/" target="_blank">this plugin</a>.', 'copy-delete-posts'); ?></div>
                           </div>
                           <div class="cdp-cf cdp-low-margin-bot" style="line-height: 28px;">
                             <div class="cdp-left cdp-blue-circle">2</div>
@@ -960,6 +958,10 @@ function cdp_configuration() {
     	</jdiv>
 
     </div>
+  </div>
+
+  <div id="cdp_carrousel" style="display: none; margin-top: 100px;">
+    <?php do_action('ins_global_print_carrousel'); ?>
   </div>
 
   <?php

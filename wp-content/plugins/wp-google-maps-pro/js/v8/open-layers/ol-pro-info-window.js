@@ -8,6 +8,15 @@ jQuery(function($) {
 	WPGMZA.OLProInfoWindow = function(feature)
 	{
 		WPGMZA.OLInfoWindow.call(this, feature);
+
+		var self = this;
+		$(this.element).on('click', function(event){
+			if(self.feature.map.settings.close_infowindow_on_map_click){
+				event.stopPropagation();
+				event.stopImmediatePropagation();
+				return;
+			}
+		});
 	}
 	
 	WPGMZA.OLProInfoWindow.prototype = Object.create(WPGMZA.OLInfoWindow.prototype);

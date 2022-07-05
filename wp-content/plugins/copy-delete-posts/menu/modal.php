@@ -161,9 +161,10 @@ function cdp_modal($screen = '', $profiles = array()) {
             <span><?php _e('Link categories', 'copy-delete-posts'); ?></span>
           </label>
         </div>
-        <?php if ($isYoast || $isUSM || $isWoo): ?>
+        <?php if ($isYoast || $isUSM || $isWoo || true): ?>
           <div class="cdp-modal-checkboxes cdp-checkboxes cdp-modal-checkboxes-three">
             <label class="cdp-relative"><span class="cdp-premium-icon" style="margin-left: 0"></span><b style="padding-left: 21px;" class="cdp-f-s-15 cdp-f-w-medium"><?php _e('Plugin options:', 'copy-delete-posts'); ?></b></label>
+            <br>
             <?php if ($isWoo): ?>
             <label class="cdp-woo">
               <div class="cdp-inline cdp-tooltip-premium-spc">
@@ -175,7 +176,7 @@ function cdp_modal($screen = '', $profiles = array()) {
             <?php if ($isYoast): ?>
             <label class="cdp-yoast">
               <div class="cdp-inline cdp-tooltip-premium-spc">
-                <input class="cdp-input-dynamic" type="checkbox" name="yoast">
+                <input class="cdp-modal-option-r cdp-input-dynamic" type="checkbox" name="yoast">
                 <span><?php _e('Yoast Settings', 'copy-delete-posts'); ?></span>
               </div>
             </label>
@@ -183,19 +184,17 @@ function cdp_modal($screen = '', $profiles = array()) {
             <?php if ($isUSM): ?>
             <label>
               <div class="cdp-inline cdp-tooltip-premium-spc">
-                <input class="cdp-input-dynamic" type="checkbox" name="usmplugin">
+                <input class="cdp-modal-option-r cdp-input-dynamic" type="checkbox" name="usmplugin">
                 <span><?php _e('USM Settings', 'copy-delete-posts'); ?></span>
               </div>
             </label>
             <?php endif; ?>
-            <?php if (false): ?>
             <label>
               <div class="cdp-inline cdp-tooltip-premium-spc">
-                <input class="cdp-input-dynamic" type="checkbox" name="all_metadata">
-                <span><?php _e('Other Plugin Settings', 'copy-delete-posts'); ?></span>
+                <input class="cdp-modal-option-r cdp-input-dynamic" type="checkbox" name="all_metadata">
+                <span><?php _e('All post meta', 'copy-delete-posts'); ?></span>
               </div>
             </label>
-            <?php endif; ?>
           </div>
         <?php endif; ?>
       </div>

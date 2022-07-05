@@ -3,12 +3,31 @@
 Plugin Name: WP Google Maps - Pro Add-on
 Plugin URI: http://www.wpgmaps.com
 Description: This is the Pro add-on for WP Google Maps. The Pro add-on enables you to add descriptions, pictures, links and custom icons to your markers as well as allows you to download your markers to a CSV file for quick editing and re-upload them when complete.
-Version:  8.1.17
+Version:  8.1.20
 Author: WP Google Maps
 Author URI: http://www.wpgmaps.com
 */
 
-/*
+/* 
+ * 8.1.20 - 2022-03-29
+ * Fixed issue where get directions button would not work with some info-window styles
+ * Fixed issue with apostrophes in the category editor
+ *
+ * 8.1.19 - 2022-03-03
+ * Fixed issue where clicking in an info window would close it when 'click map to close info-window' option is enabled (OpenLayers)
+ * Removed comments from marker listing templates
+ *
+ * 8.1.18 - 2022-02-03
+ * Fixed issue where carousel description formatting would be stripped due to nested 'p' tag usage
+ * Fixed issue where two distances would be shown depending on map show distance setup is configured
+ * Fixed issue where custom field order was not being respected in info-windows
+ * Fixed issue where custom field value could not be '0' as it would evaluate as 'empty'
+ * Fixed issue where 'My Location' text was not being used for user location markers
+ * Fixed issue where 'Use Map ID' option would not be retained when editing a scheduled import
+ * Fixed issue where modern plus info-window would catch pointer events instead of the map tileset (OpenLayers)
+ * Added support for VGM redirect within shortcode handler (Primary)
+ * Tested up to WordPress 5.9 
+ * 
  * 8.1.17 - 2021-12-09
  * Fixed issue where modern info-window color fields would not be shown for the respective styles
  * Fixed issue where modern info-window color fields did not have the color type set accordingly

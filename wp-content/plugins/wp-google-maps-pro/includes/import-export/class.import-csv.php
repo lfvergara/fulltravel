@@ -440,7 +440,7 @@ class ImportCSV extends Import {
 			<br>
 			
 			<div class="switch">
-				<input id="keep_map_id" name="keep_map_id" class="cmn-toggle cmn-toggle-round-flat" type="checkbox"/>
+				<input id="keep_map_id" name="keep_map_id" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" <?php echo $doing_edit && $this->options['keep_map_id'] ? 'checked' : ''; ?>/>
 				<label for="keep_map_id"></label></div><?php esc_html_e("Use map ID's specified in file", "wp-google-maps"); ?>
 			<br/>
 			

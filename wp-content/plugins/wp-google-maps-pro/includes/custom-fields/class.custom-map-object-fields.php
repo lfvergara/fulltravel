@@ -77,6 +77,8 @@ class CustomFeatureFields implements \IteratorAggregate, \JsonSerializable, \Cou
 		$qstr .= "
 			AND LENGTH(value)
 			";
+
+		$qstr .= " ORDER BY stack_order ASC";
 			
 		$params = array($object_id);
 		$stmt = $wpdb->prepare($qstr, $params);
@@ -252,7 +254,7 @@ class CustomFeatureFields implements \IteratorAggregate, \JsonSerializable, \Cou
 
 		foreach($this->meta as $key => $value)
 		{
-			if(empty($key) || empty($value))
+			if(empty($key) || (empty($value) && intval($value) !== 0))
 				continue;
 			
 			$id = CustomFeatureFields::$field_ids_by_name[$key];
